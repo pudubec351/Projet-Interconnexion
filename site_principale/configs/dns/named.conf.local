@@ -1,0 +1,5 @@
+zone "sw1.as1" {
+      type master;                     
+      file "/etc/bind/db.sw1.as1";      // fichier qui contient les enregistrements (nom - ip
+  };
+

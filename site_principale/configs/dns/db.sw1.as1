@@ -1,0 +1,6 @@
+$TTL 3600
+@     IN  SOA  ns1.sw1.as1. admin.sw1.as1. ( 1 3600 600 86400 3600 )
+@     IN  NS   ns1.sw1.as1.
+
+ns1   IN  A    10.1.40.4
+www   IN  A    10.1.40.7

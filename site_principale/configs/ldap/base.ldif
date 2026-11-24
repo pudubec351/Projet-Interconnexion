@@ -1,0 +1,37 @@
+# Dossiers 
+dn: ou=people,dc=sw1,dc=as1
+objectClass: organizationalUnit
+ou: people
+
+dn: ou=groups,dc=sw1,dc=as1
+objectClass: organizationalUnit
+ou: groups
+
+# Utilisateurs
+dn: uid=alex,ou=people,dc=sw1,dc=as1
+objectClass: inetOrgPerson
+uid: alex
+cn: Alex Endru
+sn: Endru
+mail: alex@sw1.as1
+userPassword: alex67
+
+dn: uid=bob,ou=people,dc=sw1,dc=as1
+objectClass: inetOrgPerson
+uid: bob
+cn: Bob bricoleur
+sn: Bricoleur
+mail: bob@sw1.as1
+userPassword: bob3000
+
+#  Groupes
+dn: cn=emploiees,ou=groups,dc=sw1,dc=as1
+objectClass: groupOfNames
+cn: emploiees
+member: uid=alex,ou=people,dc=sw1,dc=as1
+member: uid=bob,ou=people,dc=sw1,dc=as1
+
+dn: cn=admins,ou=groups,dc=sw1,dc=as1
+objectClass: groupOfNames
+cn: admins
+member: uid=alice,ou=people,dc=sw1,dc=as1

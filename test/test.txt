@@ -1,0 +1,22 @@
+docker exec pc1_E1 curl 10.1.40.7
+
+docker exec pc1_E1 nslookup www.sw1.as1
+
+
+lecture de la table par le serveur : 
+
+docker exec idap_E1 ldapsearch -x -H ldap://10.1.40.3 -b dc=sw1,dc=as1
+docker exec idap_E1 ldapsearch -x -H ldap://10.1.40.3 \
+       -D cn=admin,dc=sw1,dc=as1 -w adminldap -b ou=people,dc=sw1,dc=as1 userPassword
+
+Depuis un pc : 
+
+demander qui est dans le groupe admin:
+   
+  docker exec pc1_E1 curl "ldap://10.1.40.3/cn=admins,ou=groups,dc=sw1,dc=as1?member"
+
+Authentification depuis une machine 
+  docker exec pc1_E1 curl -u "uid=alex,ou=people,dc=sw1,dc=as1:alex67" \
+       "ldap://10.1.40.3/uid=alice,ou=people,dc=sw1,dc=as1?cn"
+
+ 
